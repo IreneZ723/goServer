@@ -16,9 +16,33 @@ import (
 func GetAlbumByKey(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
+	const jsonData = `{
+		"artist": "Sex Pistols",
+		"title": "Never Mind The Bollocks!",
+		"year": "1977"
+	}`
+
+	// Write the JSON data to the response
+	_, err := w.Write([]byte(jsonData))
+	if err != nil {
+		// Handle error if writing to response fails
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
 
 func NewAlbum(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
+	const jsonData = `{
+		"albumID": "1",
+		"imageSize": "Normal"
+	  }`
+
+	// Write the JSON data to the response
+	_, err := w.Write([]byte(jsonData))
+	if err != nil {
+		// Handle error if writing to response fails
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
 }
