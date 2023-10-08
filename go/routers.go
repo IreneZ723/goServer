@@ -58,14 +58,14 @@ var routes = Routes{
 	Route{
 		"GetAlbumByKey",
 		strings.ToUpper("Get"),
-		"/IGORTON/AlbumStore/1.0.0/albums/{albumID}",
+		"/albums/{albumID}",
 		GetAlbumByKey,
 	},
 
 	Route{
 		"NewAlbum",
 		strings.ToUpper("Post"),
-		"/IGORTON/AlbumStore/1.0.0/albums",
+		"/albums",
 		NewAlbum,
 	},
 }
